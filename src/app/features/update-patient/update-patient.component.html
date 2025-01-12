@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualizar Paciente</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="card shadow-lg">
+            <div class="card-header text-white bg-primary">
+                <h3 class="mb-0"><i class="fas fa-user-edit me-2"></i>Actualizar Paciente</h3>
+            </div>
+            <div class="card-body">
+                <form #pacienteForm="ngForm" (ngSubmit)="updatePatient()">
+                    <div class="row">
+                        <!-- Nombre y Apellido -->
+                        <div class="col-md-6 mb-3">
+                            <label for="nombre" class="form-label">Nombre</label>
+                            <input type="text" id="nombre" name="nombre" class="form-control"
+                                [(ngModel)]="patient.nombre" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="apellido" class="form-label">Apellido</label>
+                            <input type="text" id="apellido" name="apellido" class="form-control"
+                                [(ngModel)]="patient.apellido" required>
+                        </div>
+
+                        <!-- RUT y Edad -->
+                        <div class="col-md-6 mb-3">
+                            <label for="rut" class="form-label">RUT</label>
+                            <input type="text" id="rut" name="rut" class="form-control" [(ngModel)]="patient.rut"
+                                required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="edad" class="form-label">Edad</label>
+                            <input type="number" id="edad" name="edad" class="form-control" [(ngModel)]="patient.edad"
+                                min="0" required>
+                        </div>
+
+                        <!-- Género y Teléfono -->
+                        <div class="col-md-6 mb-3">
+                            <label for="genero" class="form-label">Género</label>
+                            <select id="genero" name="genero" class="form-select" [(ngModel)]="patient.genero" required>
+                                <option value="" disabled>Selecciona una opción</option>
+                                <option value="Masculino">Masculino</option>
+                                <option value="Femenino">Femenino</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="telefono" class="form-label">Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono" class="form-control"
+                                [(ngModel)]="patient.telefono" required>
+                        </div>
+
+                        <!-- Email y Dirección -->
+                        <div class="col-md-6 mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" name="email" class="form-control" [(ngModel)]="patient.email"
+                                required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="direccion" class="form-label">Dirección</label>
+                            <textarea id="direccion" name="direccion" class="form-control"
+                                [(ngModel)]="patient.direccion" rows="2" required></textarea>
+                        </div>
+
+                        <!-- Estado del Paciente y Fecha de Ingreso -->
+                        <div class="col-md-6 mb-3">
+                            <label for="estadoPaciente" class="form-label">Estado del Paciente</label>
+                            <select id="estadoPaciente" name="estadoPaciente" class="form-select"
+                                [(ngModel)]="patient.estadoPaciente" required>
+                                <option value="" disabled>Selecciona una opción</option>
+                                <option value="Normal">Normal</option>
+                                <option value="Alerta">Alerta</option>
+                                <option value="Critico">Crítico</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="fechaIngreso" class="form-label">Fecha de Ingreso</label>
+                            <input type="date" id="fechaIngreso" name="fechaIngreso" class="form-control"
+                                [(ngModel)]="patient.fechaIngreso" required>
+                        </div>
+
+                        <!-- Fecha de Nacimiento -->
+                        <div class="col-md-12 mb-3">
+                            <label for="fechaNacimiento" class="form-label">Fecha de Nacimiento</label>
+                            <input type="date" id="fechaNacimiento" name="fechaNacimiento" class="form-control"
+                                [(ngModel)]="patient.fechaNacimiento" required>
+                        </div>
+                    </div>
+
+                    <!-- Botones -->
+                    <div class="d-flex justify-content-center gap-3">
+                        <button type="submit" class="btn btn-success px-4" [disabled]="!pacienteForm.form.valid">
+                            <i class="fas fa-save"></i> Actualizar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

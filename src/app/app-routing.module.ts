@@ -5,14 +5,15 @@ import { CustomMsalGuard } from './core/interceptors/msal.guard';
 import { PatientsComponent } from './features/patients/patients.component';
 import { PatientDetailComponent } from './features/patient-detail/patient-detail.component';
 import { NewPatientComponent } from './features/new-patient/new-patient.component';
-
+import { UpdatePatientComponent } from './features/update-patient/update-patient.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'patients', component: PatientsComponent, canActivate: [CustomMsalGuard] },
-  { path: 'patient-detail', component: PatientDetailComponent, canActivate: [CustomMsalGuard] },
+  { path: 'patient-detail/:id', component: PatientDetailComponent, canActivate: [CustomMsalGuard] },
   { path: 'new-patient', component: NewPatientComponent, canActivate: [CustomMsalGuard] },
+  { path: 'update-patient/:id', component: UpdatePatientComponent, canActivate: [CustomMsalGuard] },
   { path: '**', redirectTo: '/login' }
 ];
 

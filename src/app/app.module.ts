@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { PatientsComponent } from './features/patients/patients.component';
 import { PatientDetailComponent } from './features/patient-detail/patient-detail.component';
 import { NewPatientComponent } from './features/new-patient/new-patient.component';
+import { UpdatePatientComponent } from './features/update-patient/update-patient.component';
 
 
 export function MSALFactory(): IPublicClientApplication {
@@ -37,7 +38,8 @@ export function MSALFactory(): IPublicClientApplication {
     NavbarComponent,
     PatientsComponent,
     PatientDetailComponent,
-    NewPatientComponent
+    NewPatientComponent,
+    UpdatePatientComponent
   ],
   imports: [
     BrowserModule,
