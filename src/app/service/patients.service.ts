@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Patients } from '../shared/components/models/Patient';
 import { Patient } from '../shared/components/models/Patient';
+import { NewPatient } from '../shared/components/models/Patient';
 
 
 @Injectable({
@@ -10,7 +10,7 @@ import { Patient } from '../shared/components/models/Patient';
 })
 export class PatientsService {
 
-  private apiUrl = 'http://localhost:8080/patients';
+  private apiUrl = 'http://localhost:8080/back/pacientes';
 
   constructor(private http: HttpClient) { }
 
@@ -22,12 +22,13 @@ export class PatientsService {
     return this.http.get<Patient>(`${this.apiUrl}/${id}`);
   }
 
-  createPatient(patient: Patients): Observable<Patient> {
-    return this.http.post<Patient>(`${this.apiUrl}`, patient);
+  createPatient(patient: NewPatient): Observable<NewPatient> {
+    console.log(patient);
+    return this.http.post<NewPatient>(`${this.apiUrl}`, patient);
   }
 
-  updatePatient(id: number, patient: Patients): Observable<Patient> {
-    return this.http.put<Patient>(`${this.apiUrl}/${id}`, patient);
+  updatePatient(patient: Patient): Observable<Patient> {
+    return this.http.put<Patient>(this.apiUrl, patient);
   }
 
   deletePatient(id: number): Observable<Patient> {

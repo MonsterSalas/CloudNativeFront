@@ -8,7 +8,7 @@ import { VitalSigns } from '../shared/components/models/VitalSigns';
 })
 export class VitalSignsService {
 
-  private apiUrl = 'http://localhost:8080/vitalSigns';
+  private apiUrl = 'http://localhost:8080/back/signosvitales';
 
   constructor(private http: HttpClient) { }
 

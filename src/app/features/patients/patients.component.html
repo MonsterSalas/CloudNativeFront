@@ -13,9 +13,9 @@
         <!-- Encabezado -->
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h2>Monitoreo de Pacientes</h2>
-            <button class="btn btn-outline-success">
-                <i class="fas fa-user-plus me-2"></i>Ingresar Paciente
-            </button>
+            <button class="btn btn-outline-success" [routerLink]="['/new-patient']">
+                <i class="fas fa-user-plus me-2"></i> Ingresar Paciente
+              </button>              
         </div>
 
         <!-- Listado de Pacientes -->
@@ -26,24 +26,24 @@
                         <!-- Nombre y Género -->
                         <div class="d-flex align-items-center mb-2">
                             <i class="fas gender-icon me-2" [ngClass]="{
-                                'fa-mars male': patient.genero === 'masculino',
-                                'fa-venus female': patient.genero === 'femenino'
+                                'fa-mars male': patient.genero === 'Masculino',
+                                'fa-venus female': patient.genero === 'Femenino'
                             }"></i>
                             <h5 class="card-title mb-0">{{patient.nombre}} {{patient.apellido}}</h5>
                         </div>
 
                         <!-- Estado del Paciente -->
                         <div class="status-badge mb-2" [ngClass]="{
-                            'status-normal': patient.estado === 'normal',
-                            'status-critical': patient.estado === 'critico',
-                            'status-alert': patient.estado === 'Alerta'
+                            'status-normal': patient.estadoPaciente === 'Normal',
+                            'status-critical': patient.estadoPaciente === 'Critico',
+                            'status-alert': patient.estadoPaciente === 'Alerta'
                             }">
                                 <i class="fas me-1" [ngClass]="{
-                                'fa-smile': patient.estado === 'normal',
-                                'fa-frown': patient.estado === 'critico',
-                                'fa-meh': patient.estado === 'Alerta'
+                                'fa-smile': patient.estadoPaciente === 'Normal',
+                                'fa-frown': patient.estadoPaciente === 'Critico',
+                                'fa-meh': patient.estadoPaciente === 'Alerta'
                             }"></i>
-                                Estado: {{ patient.estado | titlecase }}
+                                Estado: {{ patient.estadoPaciente | titlecase }}
                         </div>
 
                         <!-- Signos Vitales -->
@@ -75,7 +75,7 @@
                                 <i class="fas fa-edit"></i>
                             </button>
                             <button class="btn btn-outline-danger"
-                                title="Eliminar Paciente">
+                                title="Eliminar Paciente" (click)="deletePatient(patient.id)">
                                 <i class="fas fa-trash-alt"></i>
                             </button>
                         </div>

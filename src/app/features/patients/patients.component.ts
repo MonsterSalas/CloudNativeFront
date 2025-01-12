@@ -3,7 +3,7 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Patient } from 'src/app/shared/components/models/Patient';
 import { PatientsService } from 'src/app/service/patients.service';
-
+import { VitalSigns } from 'src/app/shared/components/models/VitalSigns';
 
 @Component({
   selector: 'app-patients',
@@ -24,4 +24,14 @@ export class PatientsComponent implements OnInit {
       this.patients = data;
     });
   }
+
+  deletePatient(id: number): void {
+    if (confirm('¿Estás seguro de que deseas eliminar este paciente?')) {
+      this.patientsService.deletePatient(id).subscribe(() => {
+        this.getPatients();
+      });
+    }
+  }
+  
+
 }

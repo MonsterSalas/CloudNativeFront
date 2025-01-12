@@ -5,11 +5,12 @@ export class Patient {
   edad: number;
   direccion: string;
   rut: string;
-  critico: boolean;
   fechaIngreso: Date;
   fechaNacimiento: Date;
-  descripcionIngreso: string;
-  fechaEgreso: Date;
+  estadoPaciente: string;
+  email: string;
+  genero: string;
+  telefono: string;
 
   constructor(data: any) {
     this.id = data.id;
@@ -18,36 +19,39 @@ export class Patient {
     this.edad = data.edad;
     this.direccion = data.direccion;
     this.rut = data.rut;
-    this.critico = data.critico;
     this.fechaIngreso = data.fechaIngreso;
     this.fechaNacimiento = data.fechaNacimiento;
-    this.descripcionIngreso = data.descripcionIngreso;
-    this.fechaEgreso = data.fechaEgreso;
+    this.estadoPaciente = data.estadoPaciente;
+    this.email = data.email;
+    this.genero = data.genero;
+    this.telefono = data.telefono;
   }
 }
 
-export class Patients {
+export class NewPatient {
   nombre: string;
   apellido: string;
   edad: number;
   direccion: string;
   rut: string;
-  critico: boolean;
   fechaIngreso: Date;
   fechaNacimiento: Date;
-  descripcionIngreso: string;
-  fechaEgreso: Date;
+  estadoPaciente: string;
+  email: string;
+  genero: string;
+  telefono: string;
 
   constructor(data: any) {
-    this.nombre = data.nombre;
-    this.apellido = data.apellido;
-    this.edad = data.edad;
-    this.direccion = data.direccion;
-    this.rut = data.rut;
-    this.critico = data.critico;
-    this.fechaIngreso = data.fechaIngreso;
-    this.fechaNacimiento = data.fechaNacimiento;
-    this.descripcionIngreso = data.descripcionIngreso;
-    this.fechaEgreso = data.fechaEgreso;
+      this.nombre = data.nombre;
+      this.apellido = data.apellido;
+      this.edad = data.edad;
+      this.direccion = data.direccion;
+      this.rut = data.rut;
+      this.fechaIngreso = data.fechaIngreso;
+      this.fechaNacimiento = data.fechaNacimiento;
+      this.estadoPaciente = data.estadoPaciente;
+      this.email = data.email;
+      this.genero = data.genero;
+      this.telefono = data.telefono;
   }
 }
