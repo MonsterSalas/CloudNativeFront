@@ -1,0 +1,55 @@
+body {
+  background-color: #f8f9fa;
+}
+.login-container {
+  animation: fadeIn 0.5s ease-in-out;
+}
+.fa-heartbeat {
+  font-size: 6rem; /* Aumentado significativamente */
+  color: #0d6efd;
+  margin-bottom: 2rem;
+  display: inline-block;
+  background: rgba(13, 110, 253, 0.1);
+  padding: 2rem;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+.fa-heartbeat:hover {
+  transform: scale(1.05);
+  background: rgba(13, 110, 253, 0.15);
+}
+.login-card {
+  border: none;
+  transition: transform 0.2s;
+}
+.login-card:hover {
+  transform: translateY(-5px);
+}
+.btn-microsoft {
+  background-color: #2f2f2f;
+  color: white;
+  transition: all 0.3s ease;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.1rem;
+}
+.btn-microsoft:hover {
+  background-color: #404040;
+  color: white;
+  transform: translateY(-2px);
+}
+.hospital-name {
+  color: #0d6efd;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+}
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-10px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}

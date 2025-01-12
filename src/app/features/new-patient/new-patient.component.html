@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingresar Paciente Nuevo</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="card shadow-lg">
+            <div class="card-header text-white bg-primary">
+                <h3 class="mb-0"><i class="fas fa-user-plus me-2"></i>Nuevo Paciente</h3>
+            </div>
+            <div class="card-body">
+                <form #pacienteForm="ngForm" (ngSubmit)="crearPaciente()">
+                    <!-- Nombre Completo -->
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre Completo</label>
+                        <input type="text" id="nombre" name="nombre" class="form-control" [(ngModel)]="paciente.nombre" required>
+                    </div>
+
+                    <!-- RUT -->
+                    <div class="mb-3">
+                        <label for="rut" class="form-label">RUT</label>
+                        <input type="text" id="rut" name="rut" class="form-control" [(ngModel)]="paciente.rut" required>
+                    </div>
+
+                    <!-- Edad -->
+                    <div class="mb-3">
+                        <label for="edad" class="form-label">Edad</label>
+                        <input type="number" id="edad" name="edad" class="form-control" [(ngModel)]="paciente.edad" min="0" required>
+                    </div>
+
+                    <!-- Género -->
+                    <div class="mb-3">
+                        <label for="genero" class="form-label">Género</label>
+                        <select id="genero" name="genero" class="form-select" [(ngModel)]="paciente.genero" required>
+                            <option value="" disabled selected>Selecciona una opción</option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Femenino">Femenino</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+
+                    <!-- Teléfono -->
+                    <div class="mb-3">
+                        <label for="telefono" class="form-label">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono" class="form-control" [(ngModel)]="paciente.telefono" required>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" name="email" class="form-control" [(ngModel)]="paciente.email" required>
+                    </div>
+
+                    <!-- Dirección -->
+                    <div class="mb-3">
+                        <label for="direccion" class="form-label">Dirección</label>
+                        <textarea id="direccion" name="direccion" class="form-control" [(ngModel)]="paciente.direccion" rows="2" required></textarea>
+                    </div>
+
+                    <!-- Botones -->
+                    <div class="d-flex justify-content-center gap-3">
+                        <button type="submit" class="btn btn-success px-4" [disabled]="!pacienteForm.form.valid">
+                            <i class="fas fa-save"></i> Guardar
+                        </button>
+                        <button type="reset" class="btn btn-secondary px-4">
+                            <i class="fas fa-undo"></i> Limpiar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

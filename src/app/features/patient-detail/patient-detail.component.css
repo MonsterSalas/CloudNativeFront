@@ -1,0 +1,15 @@
+.vital-sign-card {
+    transition: transform 0.2s;
+}
+.vital-sign-card:hover {
+    transform: translateY(-3px);
+}
+.status-badge {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 500;
+}
+.patient-info i {
+    width: 25px;
+    color: #6c757d;
+}

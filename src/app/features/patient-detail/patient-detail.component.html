@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Paciente</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container mt-4">
+        <!-- Encabezado con información básica -->
+        <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-user-circle fa-3x text-primary me-3"></i>
+                            <div>
+                                <h2 class="mb-0">Juan Pérez</h2>
+                                <span class="text-muted">RUT: 12.345.678-9</span>
+                            </div>
+                        </div>
+                        <div class="status-badge bg-success text-white">
+                            <i class="fas fa-smile me-1"></i>
+                            Estado: Normal
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                        <button class="btn btn-outline-primary me-2">
+                            <i class="fas fa-edit me-2"></i>Editar
+                        </button>
+                        <button class="btn btn-outline-primary">
+                            <i class="fas fa-file-pdf me-2"></i>Generar Informe
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Información Personal -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-header bg-white">
+                        <h5 class="mb-0">
+                            <i class="fas fa-info-circle me-2 text-primary"></i>
+                            Información Personal
+                        </h5>
+                    </div>
+                    <div class="card-body patient-info">
+                        <p><i class="fas fa-cake-candles"></i> Fecha de Nacimiento: 01/01/1995</p>
+                        <p><i class="fas fa-clock"></i> Edad: 30 años</p>
+                        <p><i class="fas fa-venus-mars"></i> Género: Masculino</p>
+                        <p><i class="fas fa-phone"></i> Teléfono: +56912345678</p>
+                        <p><i class="fas fa-envelope"></i> Email: juan.perez@email.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Dirección: Calle Falsa 123</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Información de Salud -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-header bg-white">
+                        <h5 class="mb-0">
+                            <i class="fas fa-hospital me-2 text-primary"></i>
+                            Información de Salud
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <h6 class="text-muted mb-2">Fecha de ingreso</h6>
+                            <p class="mb-3">10/01/2025</p>
+                        </div>
+                        <div class="mb-3">
+                            <h6 class="text-muted mb-2">Previsión de Salud</h6>
+                            <p class="mb-3">Fonasa</p>
+                        </div>
+                        <div class="mb-3">
+                            <h6 class="text-muted mb-2">Grupo Sanguíneo</h6>
+                            <p class="mb-3">O+</p>
+                        </div>
+                        <div>
+                            <h6 class="text-muted mb-2">Alergias</h6>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge bg-danger">Polen</span>
+                                <span class="badge bg-danger">Medicamentos</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Signos Vitales -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-header bg-white">
+                        <h5 class="mb-0">
+                            <i class="fas fa-heartbeat me-2 text-primary"></i>
+                            Signos Vitales
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="vital-sign-card p-3 mb-3 bg-success text-white">
+                            <h6 class="text-muted">Presión Arterial</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="h4 mb-0">120/80</span>
+                                <i class="fas fa-chart-line text-muted"></i>
+                            </div>
+                        </div>
+
+                        <div class="vital-sign-card p-3 mb-3 bg-warning text-white">
+                            <h6 class="text-muted">Temperatura</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="h4 mb-0">36.5°C</span>
+                                <i class="fas fa-thermometer-half text-muted"></i>
+                            </div>
+                        </div>
+
+                        <div class="vital-sign-card p-3 mb-3 bg-danger text-white">
+                            <h6 class="text-muted">Frecuencia Cardíaca</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="h4 mb-0">80 BPM</span>
+                                <i class="fas fa-heart text-muted"></i>
+                            </div>
+                        </div>
+
+                        <!-- Saturación de Oxígeno -->
+                        <div class="vital-sign-card p-3 mb-3 bg-info text-white">
+                            <h6 class="text-muted">Saturación de Oxígeno</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="h4 mb-0">98%</span>
+                                <i class="fas fa-lungs text-muted"></i>
+                            </div>
+                        </div>
+
+                        <!-- Fecha de Registro -->
+                        <div class="vital-sign-card p-3 bg-light text-dark">
+                            <h6 class="text-muted">Fecha de Registro</h6>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="h5 mb-0">11/01/2025</span>
+                                <i class="fas fa-calendar-day text-muted"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Historial Médico -->
+            <div class="col-12 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-white">
+                        <h5 class="mb-0">
+                            <i class="fas fa-history me-2 text-primary"></i>
+                            Historial Médico
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Fecha</th>
+                                        <th>Diagnóstico</th>
+                                        <th>Doctor</th>
+                                        <th>Tratamiento</th>
+                                        <th>Estado</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>01/10/2023</td>
+                                        <td>Resfriado Común</td>
+                                        <td>Dr. García</td>
+                                        <td>Reposo y medicación</td>
+                                        <td><span class="badge bg-success">Completado</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>15/09/2023</td>
+                                        <td>Hipertensión</td>
+                                        <td>Dr. Martínez</td>
+                                        <td>Medicamentos</td>
+                                        <td><span class="badge bg-warning">En proceso</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

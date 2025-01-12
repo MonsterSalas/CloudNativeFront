@@ -36,7 +36,7 @@ export class LoginComponent {
             next: (tokenResponse) => {
               console.log('Token adquirido:', tokenResponse);
               localStorage.setItem('jwt', tokenResponse.idToken);
-              this.router.navigate(['/home']);
+              this.router.navigate(['/patients']);
             },
             error: (error) => {
               console.error('Error al adquirir el token:', error);
