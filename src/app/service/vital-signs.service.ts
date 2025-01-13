@@ -9,7 +9,7 @@ import { NewVitalSigns } from '../shared/components/models/VitalSigns';
 })
 export class VitalSignsService {
 
-  private apiUrl = 'http://localhost:8080/back/signosvitales';
+  private apiUrl = 'https://qvtt1k0idc.execute-api.us-east-1.amazonaws.com/signosvitales';
 
   constructor(private http: HttpClient) { }
 

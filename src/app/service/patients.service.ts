@@ -10,7 +10,7 @@ import { NewPatient } from '../shared/components/models/Patient';
 })
 export class PatientsService {
 
-  private apiUrl = 'http://localhost:8080/back/pacientes';
+  private apiUrl = 'https://qvtt1k0idc.execute-api.us-east-1.amazonaws.com/pacientes';
 
   constructor(private http: HttpClient) { }
 
