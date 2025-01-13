@@ -6,6 +6,7 @@ import { PatientsComponent } from './features/patients/patients.component';
 import { PatientDetailComponent } from './features/patient-detail/patient-detail.component';
 import { NewPatientComponent } from './features/new-patient/new-patient.component';
 import { UpdatePatientComponent } from './features/update-patient/update-patient.component';
+import { UpdateVitalSingsComponent } from './features/update-vital-sings/update-vital-sings.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'patient-detail/:id', component: PatientDetailComponent, canActivate: [CustomMsalGuard] },
   { path: 'new-patient', component: NewPatientComponent, canActivate: [CustomMsalGuard] },
   { path: 'update-patient/:id', component: UpdatePatientComponent, canActivate: [CustomMsalGuard] },
+  { path: 'update-vital-sings/:id', component: UpdateVitalSingsComponent, canActivate: [CustomMsalGuard] },
   { path: '**', redirectTo: '/login' }
 ];
 

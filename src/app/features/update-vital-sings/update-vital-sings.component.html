@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualizar Signos Vitales</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="card shadow-lg">
+            <div class="card-header text-white bg-primary">
+                <h3 class="mb-0"><i class="fas fa-heartbeat me-2"></i>Actualizar Signos Vitales</h3>
+            </div>
+            <div class="card-body">
+                <form #vitalSignsForm="ngForm" (ngSubmit)="updateVitalSigns()">
+                    <div class="row">
+                        <!-- Temperatura -->
+                        <div class="col-md-6 mb-3">
+                            <label for="temperatura" class="form-label">Temperatura (°C)</label>
+                            <input type="number" id="temperatura" name="temperatura" class="form-control" 
+                                [(ngModel)]="vitalSigns.temperatura" step="0.1" required>
+                        </div>
+
+                        <!-- Frecuencia Cardíaca -->
+                        <div class="col-md-6 mb-3">
+                            <label for="frecuenciaCardiaca" class="form-label">Frecuencia Cardíaca (lpm)</label>
+                            <input type="number" id="frecuenciaCardiaca" name="frecuenciaCardiaca" class="form-control"
+                                [(ngModel)]="vitalSigns.frecuenciaCardiaca" required>
+                        </div>
+
+                        <!-- Presión Arterial -->
+                        <div class="col-md-6 mb-3">
+                            <label for="presionArterial" class="form-label">Presión Arterial (mmHg)</label>
+                            <input type="number" id="presionArterial" name="presionArterial" class="form-control"
+                                [(ngModel)]="vitalSigns.presionArterial" required>
+                        </div>
+
+                        <!-- Saturación de Oxígeno -->
+                        <div class="col-md-6 mb-3">
+                            <label for="saturacionOxigeno" class="form-label">Saturación de Oxígeno (%)</label>
+                            <input type="number" id="saturacionOxigeno" name="saturacionOxigeno" class="form-control"
+                                [(ngModel)]="vitalSigns.saturacionOxigeno" min="0" max="100" required>
+                        </div>
+                    </div>
+
+                    <!-- Botones -->
+                    <div class="d-flex justify-content-center gap-3">
+                        <button type="submit" class="btn btn-success px-4" [disabled]="!vitalSignsForm.form.valid">
+                            <i class="fas fa-save"></i> Actualizar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
