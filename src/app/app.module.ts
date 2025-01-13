@@ -19,12 +19,12 @@ export function MSALFactory(): IPublicClientApplication {
   return new PublicClientApplication({
     auth: {
       //Salas
-      //clientId: '458f5cde-53a8-48dd-a50e-1b4fddd80cf6',
-      //authority: 'https://login.microsoftonline.com/7345fdc5-f902-46fb-8808-4f86e747e2e8',
+      clientId: '458f5cde-53a8-48dd-a50e-1b4fddd80cf6',
+      authority: 'https://login.microsoftonline.com/7345fdc5-f902-46fb-8808-4f86e747e2e8',
 
       //Carlos
-      clientId: '60afa611-af86-4657-a32c-b22c6727c9c3', // Aplicación
-      authority: 'https://login.microsoftonline.com/29032863-5528-4522-9b96-00b895869533', // Inquilino
+      //clientId: '60afa611-af86-4657-a32c-b22c6727c9c3', // Aplicación
+      //authority: 'https://login.microsoftonline.com/29032863-5528-4522-9b96-00b895869533', // Inquilino
 
       redirectUri: 'http://localhost:4200'
     }

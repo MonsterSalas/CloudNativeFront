@@ -116,7 +116,7 @@
                         <div class="vital-sign-card p-3 mb-3 bg-success text-white">
                             <h6 class="text-muted">Presión Arterial</h6>
                             <div class="d-flex justify-content-between align-items-center">
-                                <span class="h4 mb-0">120/80</span>
+                                <span class="h4 mb-0">{{ vitalSigns?.presionArterial }}</span>
                                 <i class="fas fa-chart-line text-muted"></i>
                             </div>
                         </div>
@@ -124,7 +124,7 @@
                         <div class="vital-sign-card p-3 mb-3 bg-warning text-white">
                             <h6 class="text-muted">Temperatura</h6>
                             <div class="d-flex justify-content-between align-items-center">
-                                <span class="h4 mb-0">36.5°C</span>
+                                <span class="h4 mb-0">{{ vitalSigns?.temperatura }}</span>
                                 <i class="fas fa-thermometer-half text-muted"></i>
                             </div>
                         </div>
@@ -132,7 +132,7 @@
                         <div class="vital-sign-card p-3 mb-3 bg-danger text-white">
                             <h6 class="text-muted">Frecuencia Cardíaca</h6>
                             <div class="d-flex justify-content-between align-items-center">
-                                <span class="h4 mb-0">80 BPM</span>
+                                <span class="h4 mb-0">{{ vitalSigns?.frecuenciaCardiaca }}</span>
                                 <i class="fas fa-heart text-muted"></i>
                             </div>
                         </div>
@@ -141,7 +141,7 @@
                         <div class="vital-sign-card p-3 mb-3 bg-info text-white">
                             <h6 class="text-muted">Saturación de Oxígeno</h6>
                             <div class="d-flex justify-content-between align-items-center">
-                                <span class="h4 mb-0">98%</span>
+                                <span class="h4 mb-0">{{ vitalSigns?.saturacionOxigeno }}</span>
                                 <i class="fas fa-lungs text-muted"></i>
                             </div>
                         </div>
@@ -150,7 +150,7 @@
                         <div class="vital-sign-card p-3 bg-light text-dark">
                             <h6 class="text-muted">Fecha de Registro</h6>
                             <div class="d-flex justify-content-between align-items-center">
-                                <span class="h5 mb-0">11/01/2025</span>
+                                <span class="h5 mb-0">{{ vitalSigns?.fechaRegistro }}</span>
                                 <i class="fas fa-calendar-day text-muted"></i>
                             </div>
                         </div>

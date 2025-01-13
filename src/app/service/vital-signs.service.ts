@@ -33,8 +33,8 @@ export class VitalSignsService {
     return this.http.delete<VitalSigns>(`${this.apiUrl}/${id}`);
   }
 
-  getVitalSignsByPatientId(id: number): Observable<VitalSigns[]> {
-    return this.http.get<VitalSigns[]>(`${this.apiUrl}/patient/${id}`);
-  }
+  getVitalSignsByPatientId(id: number): Observable<VitalSigns> {  // Ya no es VitalSigns[]
+    return this.http.get<VitalSigns>(`${this.apiUrl}/paciente/${id}`);
+}
 
 }
