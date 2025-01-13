@@ -43,12 +43,16 @@ export class PatientDetailComponent implements OnInit {
 
   getVitalsignsByPatientId(id: number): void {
     this.vitalSignsService.getVitalSignsByPatientId(id).subscribe({
-      next: (data: VitalSigns) => {
-        this.vitalSigns = data;
-        console.log('Signos vitales:', data);
+      next: (data: VitalSigns | null) => {  // Aquí está el cambio
+        if (data) {
+          this.vitalSigns = data;
+        } else {
+          // Manejar el caso cuando no hay datos
+          console.log('No hay signos vitales para este paciente');
+        }
       },
-      error: (err) => {
-        console.error('Error al obtener los signos vitales del paciente:', err);
+      error: (err: any) => {
+        console.error('Error al obtener signos vitales:', err);
       }
     });
   }

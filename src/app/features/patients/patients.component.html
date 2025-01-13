@@ -47,30 +47,32 @@
                             Estado: {{ patient.estadoPaciente | titlecase }}
                         </div>
 
-                        <!-- Signos Vitales -->
                         <div>
-                            <div *ngIf="!vitalSignsMap[patient.id]" class="text-center">
+                            <!-- Mostrar botón cuando no hay datos -->
+                            <div *ngIf="vitalSignsMap[patient.id] === null" class="text-center">
                                 <p class="text-muted mb-2">Signos vitales no registrados...</p>
                                 <button class="btn btn-primary btn-sm" routerLink="/new-vital-signs/{{ patient?.id }}">
                                     <i class="fas fa-plus-circle me-2"></i>Registrar Signos Vitales
                                 </button>
                             </div>
-                            <div *ngIf="vitalSignsMap[patient.id]">
+                            
+                            <!-- Mostrar datos cuando existen -->
+                            <div *ngIf="vitalSignsMap[patient.id] !== null">
                                 <div class="vital-sign-card">
                                     <span><i class="fas fa-heartbeat me-2"></i>Presión Arterial:</span>
-                                    {{vitalSignsMap[patient.id].presionArterial || 'N/A'}}
+                                    {{vitalSignsMap[patient.id]?.presionArterial || 'N/A'}}
                                 </div>
                                 <div class="vital-sign-card">
                                     <span><i class="fas fa-thermometer-half me-2"></i>Temperatura:</span>
-                                    {{vitalSignsMap[patient.id].temperatura || 'N/A'}}°C
+                                    {{vitalSignsMap[patient.id]?.temperatura || 'N/A'}}°C
                                 </div>
                                 <div class="vital-sign-card">
                                     <span><i class="fas fa-heart me-2"></i>Frecuencia Cardíaca:</span>
-                                    {{vitalSignsMap[patient.id].frecuenciaCardiaca || 'N/A'}} lpm
+                                    {{vitalSignsMap[patient.id]?.frecuenciaCardiaca || 'N/A'}} lpm
                                 </div>
                                 <div class="vital-sign-card">
                                     <span><i class="fas fa-lungs me-2"></i>Saturación de Oxígeno:</span>
-                                    {{vitalSignsMap[patient.id].saturacionOxigeno || 'N/A'}}%
+                                    {{vitalSignsMap[patient.id]?.saturacionOxigeno || 'N/A'}}%
                                 </div>
                             </div>
                         </div>
