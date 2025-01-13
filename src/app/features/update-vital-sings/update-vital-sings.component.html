@@ -21,7 +21,7 @@
                         <!-- Temperatura -->
                         <div class="col-md-6 mb-3">
                             <label for="temperatura" class="form-label">Temperatura (°C)</label>
-                            <input type="number" id="temperatura" name="temperatura" class="form-control" 
+                            <input type="number" id="temperatura" name="temperatura" class="form-control"
                                 [(ngModel)]="vitalSigns.temperatura" step="0.1" required>
                         </div>
 
@@ -44,6 +44,13 @@
                             <label for="saturacionOxigeno" class="form-label">Saturación de Oxígeno (%)</label>
                             <input type="number" id="saturacionOxigeno" name="saturacionOxigeno" class="form-control"
                                 [(ngModel)]="vitalSigns.saturacionOxigeno" min="0" max="100" required>
+                        </div>
+
+                        <!-- FechaRegistro -->
+                        <div class="col-md-6 mb-3">
+                            <label for="fechaRegistro" class="form-label">Fecha de Registro</label>
+                            <input type="date" id="fechaRegistro" name="fechaRegistro" class="form-control"
+                                [(ngModel)]="vitalSigns.fechaRegistro" required>
                         </div>
                     </div>
 
