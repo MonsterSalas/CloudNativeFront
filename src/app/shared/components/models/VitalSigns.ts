@@ -17,3 +17,21 @@ export class VitalSigns {
         this.idPaciente = data.idPaciente;
     }
 }
+
+export class NewVitalSigns {
+    fechaRegistro : Date;
+    temperatura : number;
+    frecuenciaCardiaca : number;
+    saturacionOxigeno : number;
+    presionArterial : number;
+    idPaciente : number;
+
+    constructor(data: any) {
+        this.fechaRegistro = data.fechaRegistro;
+        this.temperatura = data.temperatura;
+        this.frecuenciaCardiaca = data.frecuenciaCardiaca;
+        this.saturacionOxigeno = data.saturacionOxigeno;
+        this.presionArterial = data.presionArterial;
+        this.idPaciente = data.idPaciente;
+    }
+}

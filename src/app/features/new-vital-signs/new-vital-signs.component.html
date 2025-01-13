@@ -1,0 +1,58 @@
+<div class="container mt-5">
+  <div class="card shadow-lg">
+    <div class="card-header text-white bg-primary">
+      <h3 class="mb-0"><i class="fas fa-heartbeat me-2"></i>Registrar Signos Vitales</h3>
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="createVitalSigns()">
+        <div class="row">
+          <!-- Presión Arterial -->
+          <div class="col-md-6 mb-3">
+            <label for="presionArterial" class="form-label">Presión Arterial</label>
+            <input type="text" id="presionArterial" name="presionArterial" class="form-control"
+              [(ngModel)]="vitalSigns.presionArterial" required>
+          </div>
+
+          <!-- Temperatura -->
+          <div class="col-md-6 mb-3">
+            <label for="temperatura" class="form-label">Temperatura</label>
+            <input type="number" id="temperatura" name="temperatura" class="form-control"
+              [(ngModel)]="vitalSigns.temperatura" required>
+          </div>
+
+          <!-- Frecuencia Cardíaca -->
+          <div class="col-md-6 mb-3">
+            <label for="frecuenciaCardiaca" class="form-label">Frecuencia Cardíaca</label>
+            <input type="number" id="frecuenciaCardiaca" name="frecuenciaCardiaca" class="form-control"
+              [(ngModel)]="vitalSigns.frecuenciaCardiaca" required>
+          </div>
+
+          <!-- Saturación de Oxígeno -->
+          <div class="col-md-6 mb-3">
+            <label for="saturacionOxigeno" class="form-label">Saturación de Oxígeno</label>
+            <input type="number" id="saturacionOxigeno" name="saturacionOxigeno" class="form-control"
+              [(ngModel)]="vitalSigns.saturacionOxigeno" required>
+          </div>
+
+          <!-- Fecha de Registro -->
+          <div class="col-md-6 mb-3">
+            <label for="fechaRegistro" class="form-label">Fecha de Registro</label>
+            <input type="date" id="fechaRegistro" name="fechaRegistro" class="form-control"
+              [(ngModel)]="vitalSigns.fechaRegistro" required>
+          </div>
+        </div>
+
+        <!-- Botones -->
+        <div class="d-flex justify-content-center gap-3">
+          <button type="submit" class="btn btn-success px-4">
+            <i class="fas fa-save"></i> Registrar
+          </button>
+          <button type="reset" class="btn btn-secondary px-4">
+            <i class="fas fa-undo"></i> Limpiar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
