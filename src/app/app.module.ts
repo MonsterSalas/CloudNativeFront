@@ -14,6 +14,7 @@ import { PatientDetailComponent } from './features/patient-detail/patient-detail
 import { NewPatientComponent } from './features/new-patient/new-patient.component';
 import { UpdatePatientComponent } from './features/update-patient/update-patient.component';
 import { UpdateVitalSingsComponent } from './features/update-vital-sings/update-vital-sings.component';
+import { NewVitalSignsComponent } from './features/new-vital-signs/new-vital-signs.component';
 
 
 export function MSALFactory(): IPublicClientApplication {
@@ -41,7 +42,8 @@ export function MSALFactory(): IPublicClientApplication {
     PatientDetailComponent,
     NewPatientComponent,
     UpdatePatientComponent,
-    UpdateVitalSingsComponent
+    UpdateVitalSingsComponent,
+    NewVitalSignsComponent
   ],
   imports: [
     BrowserModule,
