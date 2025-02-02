@@ -10,6 +10,7 @@ import { map, catchError } from 'rxjs/operators';
 export class VitalSignsService {
 
   private apiUrl = 'https://qvtt1k0idc.execute-api.us-east-1.amazonaws.com/signosvitales';
+  private apiUrlRabbit ="http://localhost:8080/send"
 
   constructor(private http: HttpClient) { }
 
@@ -28,15 +29,20 @@ export class VitalSignsService {
     );
   }
 
+  // createVitalSigns(idPaciente: number, vitalSigns: NewVitalSigns): Observable<NewVitalSigns> {
+  //   return this.http.post<NewVitalSigns>(`${this.apiUrl}/${idPaciente}`, vitalSigns);
+    
+  // }
+
   createVitalSigns(idPaciente: number, vitalSigns: NewVitalSigns): Observable<NewVitalSigns> {
-    return this.http.post<NewVitalSigns>(`${this.apiUrl}/${idPaciente}`, vitalSigns);
+    return this.http.post<NewVitalSigns>(`${this.apiUrlRabbit}/${idPaciente}`, vitalSigns);
+    
   }
 
   updateVitalSigns(id: number, vitalSigns: VitalSigns): Observable<VitalSigns> {
     return this.http.put<VitalSigns>(`${this.apiUrl}/${id}`, vitalSigns);
   }
   
-
   getVitalSignsById(id: number): Observable<VitalSigns> {
     return this.http.get<VitalSigns>(`${this.apiUrl}/${id}`);
   }
